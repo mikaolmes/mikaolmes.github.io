@@ -1,0 +1,65 @@
+:root {
+    --primary-color: #E98628;
+    --secondary-color: #575A5E;
+    --background-color: #F4F7F5;
+    --text-color: #08090A;
+}
+
+.box-about, .box-projects, .box-socials, .box-motivation {
+    padding: 20px;
+    margin: 8px 0;
+    border-radius: 8px;
+    background-color: var(--background-color);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.box-about:hover, .box-projects:hover, .box-socials:hover, .box-motivation:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.boxes-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 850px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Combined box styles */
+.box-about {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45%;
+    min-height: 450px;
+}
+
+.box-socials {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 45%;
+    min-height: 300px;
+}
+
+.box-projects {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    min-height: 300px;
+}
+
+.box-motivation {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 45%;
+    min-height: 450px;
+}
