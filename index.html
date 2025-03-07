@@ -1,56 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mika Olmes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
-    <!-- Preview Boxes -->
-    <div class="boxes-container">
-        <div class="box-about" data-section="about-section">
-            <h2>About Me</h2>
-        </div>
-        <div class="box-socials" data-section="socials-section">
-            <h2>Socials</h2>
-        </div>
-        <div class="box-projects" data-section="projects-section">
-            <h2>Projects</h2>
-        </div>
-        <div class="box-motivation" data-section="motivation-section">
-            <h2>Motivation</h2>
-        </div>
-    </div>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <button class="theme-switch" title="Wechsel zwischen Hell/Dunkel Modus">
+      <i class="fas fa-moon"></i>
+    </button>
 
-    <!-- Full Sections -->
-    <section id="about-section" class="full-section">
+    <!-- Main container with top anchor -->
+    <div id="top" class="main-container">
+      <!-- Table of Contents -->
+      <div class="table-of-contents">
+        <h3>Content</h3>
+        <ul>
+          <li><a href="#top">Top</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#socials">Socials</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#motivation">Motivation</a></li>
+        </ul>
+      </div>
+
+      <!-- Back to Top Button -->
+      <a href="#top" class="back-to-top" title="Back to Top">↑</a>
+
+      <!-- Preview Boxes -->
+      <div class="boxes-container">
+        <div class="box-about" data-section="about">
+          <h2>About Me</h2>
+        </div>
+
+        <div class="box-socials" data-section="socials">
+          <h2>Socials</h2>
+          <div class="social-icons">
+            <a
+              href="https://www.linkedin.com/in/mika-olmes-2227b1341/"
+              target="_blank"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/mikaolmes" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="box-projects" data-section="projects">
+          <h2>Projects</h2>
+          <div class="project-links">
+            <a
+              href="https://github.com/mikaolmes/Lernperiode-6"
+              target="_blank"
+              class="project-box"
+            >
+              <div class="project-content">
+                <i class="fa-solid fa-folder project-icon"></i>
+                <div class="project-info">
+                  <h3>Gaming Website</h3>
+                  <p>🎮 A Website for Gaming</p>
+                </div>
+              </div>
+            </a>
+            <a
+              href="https://github.com/mikaolmes/Lern-Periode-3"
+              target="_blank"
+              class="project-box"
+            >
+              <div class="project-content">
+                <i class="fa-solid fa-folder project-icon"></i>
+                <div class="project-info">
+                  <h3>Currency Calculator</h3>
+                  <p>💱 Curency Calculator created in WinForms</p>
+                </div>
+              </div>
+            </a>
+            <a href="404NotFoun" target="_blank" class="project-box">
+              <div class="project-content">
+                <i class="fa-solid fa-folder project-icon"></i>
+                <div class="project-info">
+                  <h3>Task Manager</h3>
+                  <p>📓 An Application to keep your Tasks managed</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="box-motivation" data-section="motivation">
+          <h2>Motivation</h2>
+        </div>
+      </div>
+
+      <!-- Full Sections -->
+      <section id="about" class="full-section">
         <h1>About Me</h1>
-        <div class="section-content">
-            
-        </div>
-    </section>
+        <div class="section-content"></div>
+      </section>
 
-    <section id="socials-section" class="full-section">
+      <section id="socials" class="full-section">
         <h1>Socials</h1>
-        <div class="section-content">
-            
-        </div>
-    </section>
+        <div class="section-content"></div>
+      </section>
 
-    <section id="projects-section" class="full-section">
+      <section id="projects" class="full-section">
         <h1>Projects</h1>
-        <div class="section-content">
-            
-        </div>
-    </section>
+        <div class="section-content"></div>
+      </section>
 
-    <section id="motivation-section" class="full-section">
+      <section id="motivation" class="full-section">
         <h1>Motivation</h1>
-        <div class="section-content">
-            
-        </div>
-    </section>
-</body>
+        <div class="section-content"></div>
+      </section>
+    </div>
+  </body>
 </html>
