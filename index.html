@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="style.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mika Olmes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Preview Boxes -->
     <div class="boxes-container">
-        <div class="box-about">About Me</div>
-        <div class="box-socials">Socials</div>
-        <div class="box-projects">Projects</div>
-        <div class="box-motivation">Motivation</div>
-
+        <div class="box-about" data-section="about-section">
+            <h2>About Me</h2>
+        </div>
+        <div class="box-socials" data-section="socials-section">
+            <h2>Socials</h2>
+        </div>
+        <div class="box-projects" data-section="projects-section">
+            <h2>Projects</h2>
+        </div>
+        <div class="box-motivation" data-section="motivation-section">
+            <h2>Motivation</h2>
+        </div>
     </div>
+
+    <!-- Full Sections -->
+    <section id="about-section" class="full-section">
+        <h1>About Me</h1>
+        <div class="section-content">
+            
+        </div>
+    </section>
+
+    <section id="socials-section" class="full-section">
+        <h1>Socials</h1>
+        <div class="section-content">
+            
+        </div>
+    </section>
+
+    <section id="projects-section" class="full-section">
+        <h1>Projects</h1>
+        <div class="section-content">
+            
+        </div>
+    </section>
+
+    <section id="motivation-section" class="full-section">
+        <h1>Motivation</h1>
+        <div class="section-content">
+            
+        </div>
+    </section>
 </body>
 </html>
