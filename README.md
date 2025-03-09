@@ -2,4 +2,8 @@
 
 This is a website created to give people an insight into what I have done and what I am currently doing.
 
-All Files wil be in the **Master** Branch.
+All Files wil be in the **master** Branch.
+
+# Changes to do
+- [ ] Link the correct Project for Shift encryption
+- [ ] Fill out the About Me section
