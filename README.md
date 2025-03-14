@@ -9,3 +9,4 @@ All Files wil be in the **master** Branch.
 - [ ] Fill out the About Me section
 - [ ] After clicking the Task Manager link in the About box, it shouldn't scroll automatically
 - [ ] Create a motivational Sentence
+- [ ] Do the Website Responsive
