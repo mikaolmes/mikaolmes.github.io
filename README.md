@@ -1,4 +1,5 @@
-## 🪪 * Item Personal Portfolio Website
+## 🪪 Portfolio Website
+* Item Personal
 
 This is a website created to give people an insight into what I have done and what I am currently doing.
 
