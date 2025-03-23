@@ -9,3 +9,4 @@ All Files/ Code will be in the **master** Branch.
 - [ ] After clicking the Task Manager link in the About box, it shouldn't scroll automatically
 - [ ] Create a motivational Sentence
 - [ ] Make the Website Responsive
+- [ ] Add the Powershell Project **Sorter** into the Project section
