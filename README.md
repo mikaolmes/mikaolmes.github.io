@@ -10,3 +10,4 @@ All Files/ Code will be in the **master** Branch.
 - [ ] Create a motivational Sentence
 - [X] Make the Website Responsive
 - [ ] Add the Powershell Project **Sorter** into the Project section
+- [ ] Make the Sorter Project visible
