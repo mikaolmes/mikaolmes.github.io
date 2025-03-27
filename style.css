@@ -493,4 +493,170 @@ h2 {
     text-decoration: none;
   }
 
+  /* Responsive Styles */
+
+/* Large tablets and smaller desktops */
+@media screen and (max-width: 1200px) {
+    .boxes-container {
+        max-width: 90%;
+        padding: 15px;
+    }
+    
+    .personal-info-container {
+        max-width: 90%;
+    }
+}
+
+/* Tablets */
+@media screen and (max-width: 992px) {
+    .boxes-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+    
+    .box-about, .box-projects, .box-socials, .box-motivation {
+        grid-column: 1;
+        height: auto;
+        min-height: 250px;
+    }
+    
+    .box-about {
+        grid-row: 1;
+    }
+    
+    .box-projects {
+        grid-row: 2;
+    }
+    
+    .box-socials {
+        grid-row: 3;
+        height: auto;
+        min-height: 150px;
+    }
+    
+    .box-motivation {
+        grid-row: 4;
+        height: auto;
+        min-height: 150px;
+    }
+    
+    .table-of-contents {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        margin: 20px auto;
+        width: 90%;
+    }
+    
+    .table-of-contents ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .table-of-contents li {
+        margin-bottom: 0;
+    }
+    
+    .personal-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .full-section {
+        padding: 30px 20px;
+    }
+}
+
+/* Mobile Phones */
+@media screen and (max-width: 768px) {
+    .boxes-container {
+        padding: 10px;
+    }
+    
+    .box-about, .box-projects, .box-socials, .box-motivation {
+        padding: 15px;
+    }
+    
+    .personal-info-container {
+        padding: 15px;
+    }
+    
+    .interests-container {
+        justify-content: center;
+    }
+    
+    .project-links {
+        width: 100%;
+    }
+    
+    .project-info h3 {
+        font-size: 0.9rem;
+    }
+    
+    .project-info p {
+        font-size: 0.75rem;
+    }
+    
+    .social-icons {
+        gap: 15px;
+    }
+    
+    .social-icons a i {
+        font-size: 2rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Small Mobile Phones */
+@media screen and (max-width: 480px) {
+    .theme-switch {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .back-to-top {
+        width: 35px;
+        height: 35px;
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .box-about, .box-projects, .box-socials, .box-motivation {
+        padding: 12px;
+    }
+    
+    .personal-info-container {
+        padding: 12px;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .info-label {
+        min-width: auto;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .project-content {
+        gap: 5px;
+    }
+}
   
