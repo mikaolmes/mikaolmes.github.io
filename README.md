@@ -1,12 +1,16 @@
 ## 🪪 Portfolio Website
 
-This is a website created to give people an insight into what I have done and what I am currently doing.
+Welcome to my portfolio website!  
+This site provides an overview of my past work and ongoing projects.
 
-All Files/Code will be in the **master** Branch.
+> 📌 All files and code are available in the **master** branch.
 
-### Changes to do 
-- [ ] Link the correct Project for Shift encryption
-- [ ]  Upload the Project because its not on github yet
-- [ ] After clicking the Task Manager link in the About box, it shouldn't scroll automatically
-- [ ] Create a motivational Sentence
-- [ ] Make the Sorter Project visible
+---
+
+### 🔧 To-Do List
+
+- [ ] Link the correct project for the Shift Encryption tool  
+- [ ] Upload the Shift Encryption project (not yet on GitHub)  
+- [ ] Prevent automatic scrolling when clicking the Task Manager link in the About section  
+- [ ] Add a motivational tagline to the homepage  
+- [ ] Ensure the Sorter project is publicly visible  
