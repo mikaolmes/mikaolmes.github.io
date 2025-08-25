@@ -1,215 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mika Olmes</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <button class="theme-switch" title="Wechsel zwischen Hell/Dunkel Modus">
-      <i class="fas fa-moon"></i>
-    </button>
-
-    <!-- Main container with top anchor -->
-    <div id="top" class="main-container">
-      <!-- Table of Contents -->
-      <div class="table-of-contents">
-        <h3>Content</h3>
-        <ul>
-          <li><a href="#top">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#socials">Socials</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#motivation">Motivation</a></li>
-        </ul>
-      </div>
-
-      <!-- Back to top Button -->
-      <a href="#top" class="back-to-top" title="Back to top">↑</a>
-
-      <!-- Preview Boxes -->
-      <div class="boxes-container">
-        <div class="box-about" data-section="about">
-          <h2>About Me</h2>
-          <div class="personal-info-container">
-            <div class="personal-info-header">
-              <h3>Personal Information</h3>
-            </div>
-            
-            <div class="personal-info-grid">
-              <div class="info-item">
-                <div class="info-label">Name:</div>
-                <div class="info-value">Mika</div>
-              </div>
-              
-              <div class="info-item">
-                <div class="info-label">Last Name:</div>
-                <div class="info-value">Olmes</div>
-              </div>
-              
-              <div class="info-item">
-                <div class="info-label">Birthday:</div>
-                <div class="info-value">September 2, 2007</div> 
-              </div>
-              
-              <div class="info-item">
-                <div class="info-label">Age:</div>
-                <div class="info-value">17</div> 
-              </div>
-              
-              <div class="info-item">
-                <div class="info-label">Origin:</div>
-                <div class="info-value">Germany / Switzerland</div> <!-- Replace with your actual origin -->
-              </div>
-            </div>
-          
-            <div class="interests-section">
-              <h3>Hobbies</h3>
-              <div class="interests-container">
-                <div class="interest-item">
-                  <i class="fas fa-code"></i>
-                  <span>Coding</span>
-                </div>
-                <div class="interest-item">
-                  <i class="fas fa-music"></i>
-                  <span>Music</span>
-                </div>
-                <div class="interest-item">
-                  <i class="fas fa-gamepad"></i>
-                  <span>Gaming</span>
-                </div>
-                <!-- Add more hobbies as needed -->
-              </div>
-            </div>
-            
-            <div class="current-work">
-              <h3>Currently Working On</h3>
-              <div class="work-project">
-                <i class="fas fa-laptop-code"></i>
-                <p>Portfolio Website</p>
-              </div>
-              <div class="work-project">
-                <i class="fas fa-list-check"></i>
-                <a href="https://github.com/mikaolmes/Task-Manager" target="_blank" class="task-link">Making a Task Manager with ASP.NET</a>
-              </div>
-            </div>
-          </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mika Olmes - Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
         </div>
-
-        <div class="box-socials" data-section="socials">
-          <h2>Socials</h2>
-          <div class="social-icons">
-            <a
-              href="https://www.linkedin.com/in/mika-olmes-2227b1341/"
-              target="_blank"
-            >
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/mikaolmes" target="_blank">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="box-projects" data-section="projects">
-          <h2>Projects</h2>
-          <h3>Alone</h3>
-          <div class="project-links">
-            <a
-              href="https://github.com/mikaolmes/Lernperiode-6/tree/master"
-              target="_blank"
-              class="project-box"
-            >
-              <div class="project-content">
-                <i class="fa-solid fa-folder project-icon"></i>
-                <div class="project-info">
-                  <h3>Gaming Website</h3>
-                  <p>🎮 A Website for Gaming</p>
-                </div>
-              </div>
-            </a>
-            <a
-              href="https://github.com/mikaolmes/Lern-Periode-3"
-              target="_blank"
-              class="project-box"
-            >
-              <div class="project-content">
-                <i class="fa-solid fa-folder project-icon"></i>
-                <div class="project-info">
-                  <h3>Currency Calculator</h3>
-                  <p>💱 Curency Calculator created in WinForms</p>
-                </div>
-              </div>
-            </a>
-            <a href="https://github.com/mikaolmes/Task-Manager" target="_blank" class="project-box">
-              <div class="project-content">
-                <i class="fa-solid fa-folder project-icon"></i>
-                <div class="project-info">
-                  <h3>Task Manager</h3>
-                  <p>📓 An Application to keep your Tasks managed</p>
-                </div>
-              </div>
-            </a>
-            <a href="https://github.com/mikaolmes/Sorter" target="_blank" class="project-box">
-              <div class="project-content">
-                <i class="fa-solid fa-folder project-icon"></i>
-                <div class="project-info">
-                  <h3>Sorter</h3>
-                  <p>🔀 An Sorter created in Powershell that sorts ur files</p>
-                </div>
-              </div>
-            </a>
-            <div class="project-gap"></div>
-            <div>
-              <h3>In Team</h3>
-            </div>
-              <a href="https://github.com/mikaolmes/Task-Manager" target="_blank" class="project-box">
-                <div class="project-content">
-                  <i class="fa-solid fa-folder project-icon"></i>
-                  <div class="project-info">
-                    <h3>Shift encryption</h3>
-                    <p>🔐 Caeser Shift encryption for secret messages</p>
-                  </div>
-                </div>
-              </a>
-          </div>
-        </div>
-
-        <div class="box-motivation" data-section="motivation">
-          <h2>Motivation</h2>
-        </div>
-      </div>
-
-      <!-- Full Sections -->
-      <section id="about" class="full-section">
-        <h1>About Me</h1>
-        <div class="section-content">
-          
-        </div>
-      </section>
-
-      <section id="socials" class="full-section">
-        <h1>Socials</h1>
-        <div class="section-content"></div>
-      </section>
-
-      <section id="projects" class="full-section">
-        <h1>Projects</h1>
-        <div class="section-content"></div>
-      </section>
-
-      <section id="motivation" class="full-section">
-        <h1>Motivation</h1>
-        <div class="section-content"></div>
-      </section>
     </div>
-  </body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Mika Olmes</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Developer & Creator</h1>
+            <p class="hero-subtitle">17 Jahre alt • Germany/Switzerland</p>
+            <p class="hero-description">
+                Passionate about coding, music, and gaming. Building digital experiences 
+                with modern technologies and creative solutions.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="scroll-reveal">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-info">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Name</span>
+                        <span class="info-value">Mika Olmes</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Age</span>
+                        <span class="info-value">17</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Location</span>
+                        <span class="info-value">Germany/Switzerland</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Born</span>
+                        <span class="info-value">September 2, 2007</span>
+                    </div>
+                </div>
+
+                <div class="skills">
+                    <span class="skill-tag">Coding</span>
+                    <span class="skill-tag">Music</span>
+                    <span class="skill-tag">Gaming</span>
+                    <span class="skill-tag">ASP.NET</span>
+                    <span class="skill-tag">Web Development</span>
+                    <span class="skill-tag">PowerShell</span>
+                </div>
+            </div>
+
+            <div>
+                <h3 style="margin-bottom: 1.5rem; color: var(--accent-primary);">Currently Working On</h3>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <i class="fas fa-laptop-code" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
+                            <h4>Portfolio Website</h4>
+                        </div>
+                        <p style="color: var(--text-secondary); margin: 0;">Building a modern, responsive portfolio to showcase my projects and skills.</p>
+                    </div>
+                    
+                    <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <i class="fas fa-tasks" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
+                            <h4>Task Manager with ASP.NET</h4>
+                        </div>
+                        <p style="color: var(--text-secondary); margin: 0;">Developing a comprehensive task management application using ASP.NET framework.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="scroll-reveal">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <!-- Solo Projects -->
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-gamepad project-icon"></i>
+                    <h3 class="project-title">Gaming Website</h3>
+                </div>
+                <p class="project-description">A comprehensive gaming website featuring game reviews, news, and community features.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/mikaolmes/Lernperiode-6/tree/master" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-exchange-alt project-icon"></i>
+                    <h3 class="project-title">Currency Calculator</h3>
+                </div>
+                <p class="project-description">A Windows Forms application for real-time currency conversion with multiple currency support.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">WinForms</span>
+                    <span class="tech-tag">API Integration</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/mikaolmes/Lern-Periode-3" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-tasks project-icon"></i>
+                    <h3 class="project-title">Task Manager</h3>
+                </div>
+                <p class="project-description">A comprehensive task management application built with ASP.NET for organizing and tracking tasks.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">ASP.NET</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">Database</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/mikaolmes/Task-Manager" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-sort project-icon"></i>
+                    <h3 class="project-title">File Sorter</h3>
+                </div>
+                <p class="project-description">An automated PowerShell script that organizes and sorts files in directories based on type and date.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">PowerShell</span>
+                    <span class="tech-tag">Automation</span>
+                    <span class="tech-tag">File Management</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/mikaolmes/Sorter" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-lock project-icon"></i>
+                    <h3 class="project-title">Caesar Cipher</h3>
+                </div>
+                <p class="project-description">A team project implementing Caesar shift encryption for secure message encoding and decoding.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Encryption</span>
+                    <span class="tech-tag">Team Project</span>
+                    <span class="tech-tag">Security</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="scroll-reveal">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact">
+            <h3 style="margin-bottom: 1rem; color: var(--accent-primary);">Ready to collaborate?</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                I'm always interested in new opportunities and exciting projects. 
+                Let's connect and create something amazing together!
+            </p>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mika-olmes-2227b1341/" target="_blank" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/mikaolmes" target="_blank" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
 </html>

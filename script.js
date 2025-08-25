@@ -1,208 +1,188 @@
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Scroll reveal animation
+const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+
+const elementInView = (el, dividend = 1) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
+};
+
+const displayScrollElement = (element) => {
+    element.classList.add('revealed');
+};
+
+const handleScrollAnimation = () => {
+    scrollRevealElements.forEach((el) => {
+        if (elementInView(el, 1.25)) {
+            displayScrollElement(el);
+        }
+    });
+};
+
+window.addEventListener('scroll', handleScrollAnimation);
+handleScrollAnimation(); // Initial check
+
+// Navbar background on scroll
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 100) {
+        nav.style.background = 'rgba(10, 10, 10, 0.95)';
+    } else {
+        nav.style.background = 'rgba(10, 10, 10, 0.9)';
+    }
+});
+
+// Interactive cursor effects
+document.addEventListener('mousemove', (e) => {
+    const cursor = document.createElement('div');
+    cursor.className = 'cursor-trail';
+    cursor.style.cssText = `
+        position: fixed;
+        width: 4px;
+        height: 4px;
+        background: var(--accent-primary);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        left: ${e.clientX - 2}px;
+        top: ${e.clientY - 2}px;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    `;
+    
+    document.body.appendChild(cursor);
+    
+    setTimeout(() => {
+        cursor.style.opacity = '0';
+        setTimeout(() => {
+            document.body.removeChild(cursor);
+        }, 300);
+    }, 100);
+});
+
+// Active navigation state based on scroll position
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const sectionHeight = section.offsetHeight;
+        
+        if (sectionTop <= 150 && sectionTop + sectionHeight > 150) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.style.color = 'var(--text-secondary)';
+        if (link.getAttribute('href') === '#' + current) {
+            link.style.color = 'var(--accent-primary)';
+        }
+    });
+});
+
+// Typing effect for hero title
 document.addEventListener('DOMContentLoaded', () => {
-    const scrollContainers = document.querySelectorAll('.scroll-text-container');
-    const aboutBox = document.querySelector('.box-about');
-    const boxes = document.querySelectorAll('[class^="box-"]');
-    const tocLinks = document.querySelectorAll('.table-of-contents a');
-    const backToTopBtn = document.querySelector('.back-to-top');
-    const projectLinks = document.querySelectorAll('.project-box');
-    const socialLinks = document.querySelectorAll('.box-socials a');
-    const sections = document.querySelectorAll('.full-section');
-    const themeSwitch = document.querySelector('.theme-switch');
-    
-    let lastScroll = 0;
-    let currentTheme = localStorage.getItem('theme') || 'light';
-    
-    // Apply saved theme on page load
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        if (document.querySelector('.theme-switch i')) {
-            document.querySelector('.theme-switch i').classList.remove('fa-moon');
-            document.querySelector('.theme-switch i').classList.add('fa-sun');
-        }
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        const text = heroTitle.textContent;
+        heroTitle.textContent = '';
+        heroTitle.style.opacity = '1';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < text.length) {
+                heroTitle.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+        
+        setTimeout(typeWriter, 1000);
     }
-    
-    // Theme switcher functionality
-    if (themeSwitch) {
-        themeSwitch.addEventListener('click', () => {
-            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            localStorage.setItem('theme', currentTheme);
-            
-            // Update icon
-            const icon = themeSwitch.querySelector('i');
-            if (icon) {
-                if (currentTheme === 'dark') {
-                    icon.classList.remove('fa-moon');
-                    icon.classList.add('fa-sun');
-                } else {
-                    icon.classList.remove('fa-sun');
-                    icon.classList.add('fa-moon');
-                }
-            }
-        });
-    }
-    
-    // Store initial page position
-    const initialPosition = window.scrollY;
-    
-    // Pre-expansion effect for about box
-    const checkScroll = () => {
-        const currentScroll = window.scrollY;
-        const triggerPoint = window.innerHeight * 0.2;
-        
-        if (aboutBox) {
-            if (currentScroll > triggerPoint * 0.5) {
-                aboutBox.classList.add('pre-expand');
-            } else {
-                aboutBox.classList.remove('pre-expand');
-            }
-        }
-        
-        // Show/hide back to top button
-        if (backToTopBtn) {
-            if (currentScroll > 300) {
-                backToTopBtn.style.display = 'flex';
-            } else {
-                backToTopBtn.style.display = 'none';
-            }
-        }
-        
-        // Update active state in table of contents
-        updateActiveSection();
-        
-        lastScroll = currentScroll;
-    };
-    
-    // Update active section in table of contents
-    const updateActiveSection = () => {
-        // Get current scroll position plus some offset to handle section transitions better
-        const currentPos = window.scrollY + window.innerHeight / 3;
-        
-        // Clear all active states
-        tocLinks.forEach(link => {
-            link.classList.remove('active');
-        });
-        
-        // Set active state based on current position
-        const topLink = document.querySelector('.table-of-contents a[href="#top"]');
-        if (currentPos < window.innerHeight && topLink) {
-            // We're at the top
-            topLink.classList.add('active');
-        } else {
-            // Check each section
-            let activeSection = null;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                
-                if (currentPos >= sectionTop && currentPos <= sectionBottom) {
-                    activeSection = section.getAttribute('id');
-                }
-            });
-            
-            if (activeSection) {
-                const activeLink = document.querySelector(`.table-of-contents a[href="#${activeSection}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-            }
-        }
-    };
+});
 
-    // Initial check
-    checkScroll();
+// Particle effect on click
+document.addEventListener('click', (e) => {
+    const particles = [];
+    const particleCount = 6;
     
-    // Check on scroll
-    window.addEventListener('scroll', checkScroll);
-
-    // Setup section navigation - scroll to sections
-    boxes.forEach(box => {
-        box.addEventListener('click', () => {
-            const targetId = box.dataset.section;
-            const targetSection = document.getElementById(targetId);
-            
-            if (targetSection) {
-                // Scroll to the section smoothly
-                targetSection.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-    
-    // Handle project links to prevent default behavior and open in new tab
-    projectLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            // Stop event propagation to prevent triggering parent box click
-            e.stopPropagation();
-            const url = link.getAttribute('href');
-            if (url) {
-                window.open(url, '_blank');
-            }
-        });
-    });
-    
-    // Handle social links to open in new tab and prevent default behavior
-    socialLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            // Stop event propagation to prevent triggering parent box click
-            e.stopPropagation();
-            const url = link.getAttribute('href');
-            if (url) {
-                window.open(url, '_blank');
-            }
-        });
-    });
-    
-    // Smooth scrolling for table of contents links
-    tocLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-    
-    // Smooth scrolling for back to top button
-    if (backToTopBtn) {
-        backToTopBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            left: ${e.clientX - 2}px;
+            top: ${e.clientY - 2}px;
+        `;
         
-        // Initially hide back to top button
-        backToTopBtn.style.display = 'none';
+        document.body.appendChild(particle);
+        particles.push(particle);
+        
+        const angle = (Math.PI * 2 * i) / particleCount;
+        const velocity = 2;
+        const vx = Math.cos(angle) * velocity;
+        const vy = Math.sin(angle) * velocity;
+        
+        let x = e.clientX;
+        let y = e.clientY;
+        let opacity = 1;
+        
+        const animate = () => {
+            x += vx;
+            y += vy;
+            opacity -= 0.02;
+            
+            particle.style.left = x - 2 + 'px';
+            particle.style.top = y - 2 + 'px';
+            particle.style.opacity = opacity;
+            
+            if (opacity > 0) {
+                requestAnimationFrame(animate);
+            } else {
+                document.body.removeChild(particle);
+            }
+        };
+        
+        requestAnimationFrame(animate);
     }
-    
-    // Listen for history changes to restore position
-    window.addEventListener('popstate', function(event) {
-        // Return to top when coming back from external links
-        window.scrollTo(0, 0);
-    });
-    
-    // Initial active section
-    updateActiveSection();
-    
-    // Update user info if available
-    const userInfoElement = document.querySelector('.user-info');
-    if (userInfoElement) {
-        const timeElement = userInfoElement.querySelector('.time');
-        if (timeElement) {
-            timeElement.textContent = `Date: ${new Date().toISOString().slice(0, 19).replace('T', ' ')}`;
+});
+
+// Smooth reveal animations for project cards using IntersectionObserver
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
         }
-    }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.project-card').forEach(card => {
+    observer.observe(card);
 });
