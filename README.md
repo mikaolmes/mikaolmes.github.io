@@ -10,4 +10,5 @@ This site provides an overview of my past work and ongoing projects.
 ### 🔧 To-Do List
  
 - [ ] Prevent automatic scrolling when clicking the Task Manager link in the About section  
-- [ ] Ensure the Sorter project is publicly visible  
+- [ ] Ensure the Sorter project is publicly visible
+- [ ] Update Personal Information
